@@ -1,19 +1,22 @@
 import React from "react";
 import tw from "tailwind-styled-components";
+import Link from "next/link";
 
 const Search = () => {
   return (
     <Wrapper>
       {/* button container */}
       <ButtonContainer>
-        <BackButton src="https://img.icons8.com/ios-filled/50/000000/left.png" />
+        <Link href="/">
+          <BackButton src="https://img.icons8.com/ios-filled/50/000000/left.png" />
+        </Link>
       </ButtonContainer>
       {/* input container */}
       <InputContainer>
         <FromToIcons>
-          <Circle src="https://img.icons8.com/ios/50/9CA3AF/vertical-line.png" />
+          <Circle src="https://img.icons8.com/ios-filled/50/9CA3AF/filled-circle.png" />
           <Line src="https://img.icons8.com/ios/50/9CA3AF/vertical-line.png" />
-          <Square src="https://img.icons8.com/ios/50/9CA3AF/vertical-line.png" />
+          <Square src="https://img.icons8.com/windows/50/000000/square-full.png" />
         </FromToIcons>
         <InputBoxes>
           <Input placeholder="Enter pickup location" />
@@ -22,9 +25,13 @@ const Search = () => {
         <PlusIcon src="https://img.icons8.com/ios/50/000000/plus-math.png" />
       </InputContainer>
       <SavedPlaces>
-        <StarIcon src="https://img.icons8.com/ios-filled/50/ffffff/star--v1.png" />
+        <StartIcon src="https://img.icons8.com/ios-filled/50/ffffff/star--v1.png" />
+        Saved Places
       </SavedPlaces>
       {/* saved palces */}
+      <ConfirmLocation>
+        Confirm Location 
+      </ConfirmLocation>
       {/* confirm location */}
     </Wrapper>
   );
@@ -40,6 +47,7 @@ const ButtonContainer = tw.div`
 bg-white px-4
 `;
 const BackButton = tw.img`
+h-12
 `;
 
 const InputContainer = tw.div`
@@ -72,5 +80,8 @@ const SavedPlaces = tw.div`
 flex items-center bg-white px-4 py-2
 `;
 const StartIcon = tw.img`
-bg-gray-400 w-10 h-10 p-2 rounded-full
+bg-blue-400 w-10 h-10 p-2 rounded-full mr-2
+`;
+const ConfirmLocation = tw.div`
+bg-black text-white text-center m-4 py-2 
 `;

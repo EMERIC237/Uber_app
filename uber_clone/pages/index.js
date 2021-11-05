@@ -29,8 +29,8 @@ export default function Home() {
             Reserve
           </ActionButton>
         </ActionsButtons>
-        <Link href="/">
-          <InputButton>Where to</InputButton>
+        <Link href="/Search">
+          <InputButton>Where to ?</InputButton>
         </Link>
       </ActionItems>
     </Wrapper>
