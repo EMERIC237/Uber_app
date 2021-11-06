@@ -29,10 +29,12 @@ const Search = () => {
         Saved Places
       </SavedPlaces>
       {/* saved palces */}
-      <ConfirmLocation>
-        Confirm Location 
-      </ConfirmLocation>
+      <ConfirmLocation>Confirm Location</ConfirmLocation>
       {/* confirm location */}
+      <LogoContainer>
+        We Take you There !🚕🚕🚕
+        <LogoImage src="/images/drive.jpg" />
+      </LogoContainer>
     </Wrapper>
   );
 };
@@ -84,4 +86,11 @@ bg-blue-400 w-10 h-10 p-2 rounded-full mr-2
 `;
 const ConfirmLocation = tw.div`
 bg-black text-white text-center m-4 py-2 
+`;
+
+const LogoContainer = tw.div`
+flex flex-col space-between items-center mt-20
+`;
+const LogoImage = tw.img`
+h-80 w-100
 `;
