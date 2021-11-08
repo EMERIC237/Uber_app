@@ -16,10 +16,12 @@ export default function Home() {
           </Profile>
         </Header>
         <ActionsButtons>
-          <ActionButton>
-            <ActionButtonImg src="https://i.ibb.co/cyvcpfF/uberx.png" />
-            Ride
-          </ActionButton>
+          <Link href="/Search">
+            <ActionButton>
+              <ActionButtonImg src="https://i.ibb.co/cyvcpfF/uberx.png" />
+              Ride
+            </ActionButton>
+          </Link>
           <ActionButton>
             <ActionButtonImg src="https://i.ibb.co/n776JLm/bike.png" />
             Wheels
