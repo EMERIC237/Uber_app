@@ -3,9 +3,9 @@ import tw from "tailwind-styled-components";
 import mapboxgl from "!mapbox-gl";
 
 mapboxgl.accessToken =
-  "pk.eyJ1IjoiZHJha29zaSIsImEiOiJja2x1YW9jdWswOHcyMnVvZXQ1aTVqcHBnIn0.G0SLu_zwAEU9_q8FIkHeaQ";
+  "pk.eyJ1IjoiZW1lcmljMjM3IiwiYSI6ImNrdmxvN2cxdjlld2sycHBnYno2bzRvZWoifQ.BENGYAt0PWKEoAVYBF0C6A";
 
-const Map = (props) => {
+const Map = ({ pickupCoordinates, dropoffCoordinates }) => {
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: "map",
@@ -14,20 +14,20 @@ const Map = (props) => {
       zoom: 3,
     });
 
-    if (props.pickupCoordinates) {
-      addToMap(map, props.pickupCoordinates);
+    if (pickupCoordinates) {
+      addToMap(map, pickupCoordinates);
     }
 
-    if (props.dropoffCoordinates) {
-      addToMap(map, props.dropoffCoordinates);
+    if (dropoffCoordinates) {
+      addToMap(map, dropoffCoordinates);
     }
 
-    if (props.pickupCoordinates && props.dropoffCoordinates) {
-      map.fitBounds([props.dropoffCoordinates, props.pickupCoordinates], {
+    if (pickupCoordinates && dropoffCoordinates) {
+      map.fitBounds([dropoffCoordinates, pickupCoordinates], {
         padding: 60,
       });
     }
-  }, [props.pickupCoordinates, props.dropoffCoordinates]);
+  }, [pickupCoordinates, dropoffCoordinates]);
 
   const addToMap = (map, coordinates) => {
     const marker1 = new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
