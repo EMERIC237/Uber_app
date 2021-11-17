@@ -18,7 +18,7 @@ const Confirm = () => {
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${pickup}.json?` +
         new URLSearchParams({
           access_token:
-            "pk.eyJ1IjoiZHJha29zaSIsImEiOiJja2x1YW9jdWswOHcyMnVvZXQ1aTVqcHBnIn0.G0SLu_zwAEU9_q8FIkHeaQ",
+            "pk.eyJ1IjoiZW1lcmljMjM3IiwiYSI6ImNrdnB1c3dhcTRid3MydnFpMGM5aHhoMnIifQ.OqZjEXJQe80Xp6W5N-XWSA",
           limit: 1,
         })
     )
@@ -33,12 +33,13 @@ const Confirm = () => {
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${dropoff}.json?` +
         new URLSearchParams({
           access_token:
-            "pk.eyJ1IjoiZHJha29zaSIsImEiOiJja2x1YW9jdWswOHcyMnVvZXQ1aTVqcHBnIn0.G0SLu_zwAEU9_q8FIkHeaQ",
+            "pk.eyJ1IjoiZW1lcmljMjM3IiwiYSI6ImNrdnB1c3dhcTRid3MydnFpMGM5aHhoMnIifQ.OqZjEXJQe80Xp6W5N-XWSA",
           limit: 1,
         })
     )
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         setDropoffCoordinates(data.features[0].center);
       });
   };
